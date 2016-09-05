@@ -35,7 +35,7 @@ var app = {
   // function, we must explicitly call 'app.receivedEvent(...);'
   onDeviceReady: function() {
       app.wikitudePlugin = cordova.require("com.wikitude.phonegap.WikitudePlugin.WikitudePlugin");
-      app.wikitudePlugin.isDeviceSupported(app.onDeviceSupported, app.onDeviceNotSupported, [ "2d_tracking"]);
+      app.wikitudePlugin.isDeviceSupported(app.onDeviceSupported, app.onDeviceNotSupported, [ "geo"]);
       app.receivedEvent('deviceready');
   },
   
@@ -44,7 +44,7 @@ var app = {
                                             app.onARExperienceLoadedSuccessful,
                                             app.onARExperienceLoadError,
                                             "www/ar.html",
-                                            [ "2d_tracking"],
+                                            [ "geo"],
                                             {"camera_position": "back"}
                                             );
   },
